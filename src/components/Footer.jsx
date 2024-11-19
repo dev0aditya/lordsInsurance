@@ -49,7 +49,6 @@ function Footer() {
               className="cursor-pointer hover:text-primary-darkest transition-transform duration-900"
               onClick={() => {
                 navigate("/about-us");
-                setActive(false);
               }}
             >
               About
@@ -57,8 +56,7 @@ function Footer() {
             <div
               className="cursor-pointer hover:text-primary-darkest transition-transform duration-900"
               onClick={() => {
-                navigate("/contact-us");
-                setActive(false);
+                navigate("/contact");
               }}
             >
               Contact
@@ -67,7 +65,6 @@ function Footer() {
               className="cursor-pointer hover:text-primary-darkest transition-transform duration-900"
               onClick={() => {
                 navigate("/privacy-policy");
-                setActive(false);
               }}
             >
               Privacy Policy
@@ -76,7 +73,6 @@ function Footer() {
               className="cursor-pointer hover:text-primary-darkest transition-transform duration-900"
               onClick={() => {
                 navigate("/terms-and-conditions");
-                setActive(false);
               }}
             >
               Terms and Condition
@@ -85,7 +81,6 @@ function Footer() {
               className="cursor-pointer hover:text-primary-darkest transition-transform duration-900"
               onClick={() => {
                 navigate("/disclaimer");
-                setActive(false);
               }}
             >
               Disclaimer
@@ -94,7 +89,6 @@ function Footer() {
               className="cursor-pointer hover:text-primary-darkest transition-transform duration-900"
               onClick={() => {
                 navigate("/terms-of-use");
-                setActive(false);
               }}
             >
               Terms of Use
