@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "./product";
+import Product from "./Product";
 import reasonOne from "../assets/industry-expertise.png";
 import reasonTwo from "../assets/policy-range.png";
 import reasonThree from "../assets/centered-service.png";
