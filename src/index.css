@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* animations */
+.hamburger .line {
+  width: 30px;
+  height: 3px;
+  background-color: #0d1f23;
+  display: block;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger .line:last-child {
+  margin-bottom: 0px;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+#hamburger-9 {
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger-9.is-active {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#hamburger-9:before {
+  content: "";
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  border: 5px solid transparent;
+  top: calc(50% - 18px);
+  left: calc(50% - 18px);
+  border-radius: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger-9.is-active:before {
+  border: 3px solid #0d1f23;
+}
+
+#hamburger-9.is-active .line {
+  width: 20px;
+}
+
+#hamburger-9.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger-9.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(8px);
+  -ms-transform: translateY(8px);
+  -o-transform: translateY(8px);
+  transform: translateY(8px);
+}
+
+#hamburger-9.is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-8px) rotate(90deg);
+  -ms-transform: translateY(-8px) rotate(90deg);
+  -o-transform: translateY(-8px) rotate(90deg);
+  transform: translateY(-8px) rotate(90deg);
+}
+
+.data-text {
+  display: flex;
+  flex-direction: column;
+  @apply gap-3;
+}
+
+.data-text p {
+  @apply text-sm tracking-wide;
+}
+
+.data-text h2 {
+  @apply font-semibold text-lg tracking-wide;
+}
+
+.data-text h3 {
+  @apply font-semibold tracking-wide mt-1;
+}
+
+.data-text ul {
+  @apply list-disc ml-[25px] text-sm;
+}
+
+.rightContainerClaim form .details input {
+  @apply bg-white shadow-md py-2 px-4 text-xl 2xl:text-2xl focus:outline-none rounded-lg;
+}
+
+.rightContainerClaim form .details textarea {
+  resize: none;
+  @apply bg-white shadow-md py-2 px-4 text-xl 2xl:text-2xl focus:outline-none rounded-lg;
+}
+
+select option {
+  @apply w-fit text-sm text-opacity-75;
+}
