@@ -96,18 +96,21 @@ function EmployeeSlider() {
         breakpoint: 768,
         settings: {
           slidesToShow: 1.8,
+          slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2.8,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 500,
         settings: {
           slidesToShow: 1.05,
+          slidesToScroll: 1,
         },
       },
     ],
