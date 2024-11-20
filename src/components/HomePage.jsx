@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Product from "./Product";
 import reasonOne from "../assets/industry-expertise.png";
 import reasonTwo from "../assets/policy-range.png";
@@ -19,19 +19,114 @@ import iciciLombard from "../assets/icici-lombard.png";
 import nivaLogo from "../assets/niva.png";
 import tataLogo from "../assets/tata-aig.png";
 import BrandComponent from "./BrandComponent";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function HomePage() {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2 } });
+
+    tl.fromTo(
+      "h1",
+      { y: "100%", opacity: 0 },
+      {
+        "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+        y: "0%",
+        opacity: 1,
+        duration: 2.2,
+      }
+    )
+      .fromTo(
+        ".title-desc",
+        { y: "100%", opacity: 0 },
+        {
+          "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+          y: "0%",
+          opacity: 1,
+        },
+        "-=1.7"
+      )
+      .fromTo(
+        ".title-small-desc",
+        { y: "100%", opacity: 0 },
+        {
+          "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+          y: "0%",
+          opacity: 1,
+        },
+        "-=1.9"
+      )
+      .to(".banner-img", { opacity: 1 }, "-=2");
+
+    gsap.fromTo(
+      ".ContainerTitle",
+      { y: "100%", opacity: 0 },
+      {
+        "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+        y: "0%",
+        opacity: 1,
+        duration: 2,
+        ease: "power4.out",
+        scrollTrigger: {
+          scrub: false,
+        },
+      }
+    );
+    gsap.fromTo(
+      ".ContainerSubTitle",
+      { y: "100%", opacity: 0 },
+      {
+        "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+        y: "0%",
+        opacity: 1,
+        duration: 1.6,
+        ease: "power4.in",
+        scrollTrigger: {
+          scrub: false,
+        },
+      }
+    );
+    gsap.fromTo(
+      ".product-card",
+      { y: "100%" },
+      {
+        y: "0%",
+        duration: 1.6,
+        stagger: 0.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".products",
+          scrub: false,
+        },
+      }
+    );
+    gsap.fromTo(
+      ".reason",
+      { opacity: 0 },
+      {
+        y: "0%",
+        opacity: 1,
+        duration: 1,
+        ease: "power4.in",
+        scrollTrigger: {
+          trigger: ".reasonHolder1",
+          scrub: false,
+        },
+      }
+    );
+  }, []);
   return (
-    <div className=" text-secondary-lighter">
+    <div className="text-secondary-lighter">
       <div className="HeroContainer pt-5 px-6 md:px-12 xl:px-24">
         <div className="textBox py-6">
-          <h3 className="text-xs xs:mb-2 xl:text-sm mb-1 xl:mb-0 opacity-60 tracking-wide lowercase">
+          <h3 className="title-small-desc text-xs xs:mb-2 xl:text-sm mb-1 xl:mb-0 opacity-60 tracking-wide lowercase">
             Welcome to Lords Mark Insurance Broking Services
           </h3>
           <h1 className="text-3xl xs:text-4xl xl:text-[3.5rem] xl:leading-[3.7rem] mb-3 xs:mb-4 capitalize">
             Your Trusted Partner <br /> in Insurance{" "}
           </h1>
-          <h2 className="text-lg opacity-70 tracking-wide">
+          <h2 className="title-desc text-lg opacity-70 tracking-wide">
             Explore a Range of Insurance Solutions Tailored for You.
           </h2>
         </div>
@@ -40,7 +135,7 @@ function HomePage() {
             <img
               src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="banner-img"
-              className="object-cover h-full w-full rounded-xl xl:object-center"
+              className="banner-img object-cover opacity-0 h-full w-full rounded-xl xl:object-center"
             />
           </div>
         </div>
@@ -59,14 +154,14 @@ function HomePage() {
       </div>
       <div className="productContainer mt-20 xl:mt-24 xl:px-24 px-6 md:px-12">
         <div className="heading mb-7 xl:mb-10">
-          <h4 className="text-sm xl:text-base opacity-60">
+          <h4 className="ContainerSubTitle text-sm xl:text-base opacity-60">
             Flexible Policies to fit unique need
           </h4>
-          <h2 className="text-2xl xl:text-3xl tracking-wide">
+          <h2 className="ContainerTitle text-2xl xl:text-3xl tracking-wide">
             Our Insurance Products
           </h2>
         </div>
-        <div className="products grid gap-6 xs:gap-8 md:grid-cols-2 xl:grid-cols-4 md:gap-x-3">
+        <div className="products overflow-hidden grid gap-6 xs:gap-8 md:grid-cols-2 xl:grid-cols-4 md:gap-x-3">
           <Product
             img={
               "https://plus.unsplash.com/premium_photo-1675808577247-2281dc17147a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -119,7 +214,7 @@ function HomePage() {
             Broking Services?
           </h2>
         </div>
-        <div className="reasonHolder grid grid-cols-2 xl:grid-cols-4 gap-2 xl:gap-4 mb-10 md:mb-14">
+        <div className="reasonHolder1 overflow-hidden grid grid-cols-2 xl:grid-cols-4 gap-2 xl:gap-4 mb-10 md:mb-14">
           <ReasonComponent img={reasonOne} title={"Industry Expertise "} />
           <ReasonComponent
             img={reasonTwo}
@@ -139,7 +234,7 @@ function HomePage() {
             Discover why countless clients trust us.
           </p>
         </div>
-        <div className="reasonHolder grid grid-cols-2 xl:grid-cols-4 gap-2 xl:gap-4 mb-7">
+        <div className="reasonHolder2 overflow-hidden grid grid-cols-2 xl:grid-cols-4 gap-2 xl:gap-4 mb-7">
           <ReasonComponent
             img={reasonFive}
             title={"10000+"}

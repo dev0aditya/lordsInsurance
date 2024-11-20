@@ -37,7 +37,7 @@ function Header() {
     gsap.fromTo(
       ".headerContent",
       { y: -100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power2.out" }
+      { y: 0, opacity: 1, duration: 1.2, ease: "power4.out" }
     );
   }, []);
 

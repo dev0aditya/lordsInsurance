@@ -3,7 +3,7 @@ import { BsArrowRightCircleFill } from "react-icons/bs";
 
 function Product({ img, header, desc, discount }) {
   return (
-    <div className="product group relative cursor-pointer">
+    <div className="product-card group relative cursor-pointer">
       <div className="imgbox flex justify-center items-center relative rounded-xl">
         <img
           src={img}
